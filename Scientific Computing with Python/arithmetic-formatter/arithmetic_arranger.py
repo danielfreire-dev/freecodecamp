@@ -1,20 +1,6 @@
-"""
-This program uses the function arithmetic_arranger to display aritmethic problems
-vertically and, if asked for, the solution.
-"""
 from typing import List
 
 def arithmetic_arranger(problems: List[str], calculate_solution: bool = False) -> str:
-    """Display the input problems (maximum 5) vertically and, if asked for, the solution.
-
-    Args:
-        problems (list[str]): Input list with problems
-        calculate_solution (bool, optional): Value to indicate if a calculated solution
-        is wanted. Defaults to False.
-
-    Returns:
-        str: Formatted string in a vertically layout
-    """
     SPACE: str = " " * 4
     top_row: str = ""
     bot_row: str = ""
@@ -24,7 +10,6 @@ def arithmetic_arranger(problems: List[str], calculate_solution: bool = False) -
     if len(problems) > 5:
         return "Error: Too many problems."
 
-    # loop through the list of problems and apply every operation seperatly
     for problem in problems:
         active_problem = problem.split()
         num_1: str = active_problem[0]
@@ -40,8 +25,6 @@ def arithmetic_arranger(problems: List[str], calculate_solution: bool = False) -
         if (len(num_1) and len(num_2)) > 4:
             return "Error: Numbers cannot be more than four digits."
 
-        # calculate the length of the longest operand and add 2
-        # because of the operator and the needed space
         length: int = max(len(num_1), len(num_2)) + 2
         top: str = num_1.rjust(length)
         bot: str = operator + num_2.rjust(length - 1)
@@ -49,8 +32,6 @@ def arithmetic_arranger(problems: List[str], calculate_solution: bool = False) -
         result: str = "".rjust(length)
 
         if calculate_solution:
-            # convert the strs to ints and add or sub the operands
-            # convert the result back to str
             if operator == "+":
                 result = str(int(num_1) + int(num_2)).rjust(length)
             else:
