@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Build a Survey Form</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h1 id='title'>My Programming Survey</h1>
+<p id='description'>Please fill out this form with the required information</p>
+<form id="survey-form">
+  <fieldset>
+    <label id='name-label'>What is your name: <input type="text" id="name" placeholder='Name' required /></label>
+    <label id='email-label'>Enter Your Email: <input type="email" id="email" placeholder='Email' required /></label>
+    <label id='number-label'>Input your age (years): <input type="number" id="number" min="13" max="120" placeholder='Number' /></label>
+  </fieldset>
+  <fieldset>
+    <label>How did you hear about us?
+      <select id="dropdown">
+        <option value="">(select one)</option>
+        <option value="1">freeCodeCamp News</option>
+        <option value="2">freeCodeCamp YouTube Channel</option>
+        <option value="3">freeCodeCamp Forum</option>
+        <option value="4">Other</option>
+      </select>
+    </label>
+    <label><input type="radio" name="account-type" class="inline" value='Personal' /> Personal Account</label>
+    <label><input type="radio" name="account-type" class="inline" value='business' /> Business Account</label>
+
+    <label><input type="checkbox" name="terms" class="inline" value='terms' required /> I accept the terms and conditions</label>
+    <label><input type="checkbox" name="terms" class="inline" value='terms' required /> I absolutely accept the terms and conditions</label>
+    <label><input type="checkbox" name="terms" class="inline" value='terms' required /> I definitely accept the terms and conditions</label>
+  </fieldset>
+  <input type="submit" id='submit' value="Submit" />
+  <textarea name="bio" rows="3" cols="30" placeholder="I like coding on the beach..."></textarea>
+</form>
+<!-- partial -->
+  <script src='https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
